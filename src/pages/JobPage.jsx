@@ -1,6 +1,8 @@
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { FaArrowLeft, FaMapMarker } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import PropTypes from 'prop-types';
 
 const JobPage = ({ deleteJob }) => {
     // const {id} = useParams();
@@ -11,6 +13,8 @@ const JobPage = ({ deleteJob }) => {
         const confirm = window.confirm('Are you sure you want to delete?');
         if(!confirm) return;
         deleteJob(jobId);
+
+        toast.success('Job deleted successfully.');
 
         navigate('/jobs');
     };
@@ -111,5 +115,9 @@ const jobLoader = async ({ params }) => {
     const data = await res.json();
     return data;
 };
+
+JobPage.propTypes = {
+    deleteJob: PropTypes.object
+}
 
 export { JobPage as default, jobLoader }

@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import PropTypes from 'prop-types';
 
 const AddJobPage = ({ addJobSubmit }) => {
 
@@ -33,6 +35,8 @@ const AddJobPage = ({ addJobSubmit }) => {
             }
         };
         addJobSubmit(newJob);
+
+        toast.success('Added job successfully');
 
         return navigate('/jobs');
     };
@@ -221,6 +225,10 @@ const AddJobPage = ({ addJobSubmit }) => {
       </div>
     </section>
   )
+}
+
+AddJobPage.propTypes = {
+    addJobSubmit: PropTypes.object
 }
 
 export default AddJobPage
