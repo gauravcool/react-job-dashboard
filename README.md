@@ -1,4 +1,4 @@
-# React + Vite
+# React + Vite + JSX + tailwind + Router + json-server + spinners + proxy + CRUD + toaster
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
