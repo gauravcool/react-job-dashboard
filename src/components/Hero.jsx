@@ -1,4 +1,5 @@
-// eslint-disable-next-line react/prop-types
+import PropTypes from 'prop-types';
+
 const Hero = ({title='Become a React dev', subtitle='Find the React job that fits your skill  set'}) => {
   return (
     <section className="bg-indigo-700 py-20 mb-4">
@@ -18,6 +19,11 @@ const Hero = ({title='Become a React dev', subtitle='Find the React job that fit
       </div>
     </section>
   )
+}
+
+Hero.propTypes = {
+  title: PropTypes.object,
+  subtitle: PropTypes.object
 }
 
 export default Hero
